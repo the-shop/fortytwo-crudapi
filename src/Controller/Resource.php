@@ -14,6 +14,7 @@ use Framework\CrudApi\Repository\GenericRepository;
 /**
  * Class Resource
  * @package Framework\CrudApi\Controller
+ * @todo lose 42 - Http dependency
  */
 class Resource extends HttpController
 {
