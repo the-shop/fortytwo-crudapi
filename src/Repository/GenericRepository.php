@@ -15,20 +15,25 @@ class GenericRepository extends BrunoRepository
     /**
      * @return array
      */
-    public function getModelAttributesDefinition()
+    public function getModelAttributesDefinition(): array
     {
         return $this->getRepositoryManager()
-            ->getRegisteredModelFields($this->getResourceName());
+                    ->getRegisteredModelFields($this->getResourceName());
+    }
+
+    public function getResourceName()
+    {
+        return $this->getCollection();
     }
 
     /**
      * @param BrunoInterface $bruno
      *
-     * @return \Framework\Base\Database\DatabaseQueryInterface
+     * @return DatabaseQueryInterface
      */
     public function createNewQueryForModel(BrunoInterface $bruno): DatabaseQueryInterface
     {
-        $bruno->setCollection($this->resourceName);
+        $bruno->setCollection($this->getResourceName());
 
         $query = parent::createNewQueryForModel($bruno);
 
