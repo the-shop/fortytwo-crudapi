@@ -7,6 +7,5 @@
     <php>
         <env name="DATABASE_ADDRESS" value="192.168.33.10:27017"/>
         <env name="DATABASE_NAME" value="framework-test"/>
-        <env name="APPLICATION_CONFIG_PATH" value="/config"/>
     </php>
 </phpunit>

@@ -3,6 +3,7 @@
 namespace Framework\CrudApi\Model;
 
 use Framework\Base\Model\Bruno;
+use Framework\Base\Model\BrunoInterface;
 
 /**
  * Class Generic
@@ -14,7 +15,8 @@ class Generic extends Bruno
      * Sets `$resourceName` as the document collection
      *
      * @param string $resourceName
-     * @return $this
+     *
+     * @return BrunoInterface
      */
     public function setResourceName(string $resourceName)
     {
