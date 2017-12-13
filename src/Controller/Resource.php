@@ -115,6 +115,10 @@ class Resource extends HttpController
     private function buildFilteredQuery(BrunoRepositoryInterface $repository
     ): DatabaseQueryInterface
     {
+        /**
+         * @var GenericRepository $repository
+         */
+
         $query = $repository->getPrimaryAdapter()
                             ->newQuery();
 
@@ -323,6 +327,10 @@ class Resource extends HttpController
      *
      * @return ControllerInterface
      * @throws \RuntimeException
+     * @todo `switch()` can be replaced with
+     *      if ($requestMethod !== 'PATCH') {
+     *          $this->validateRequiredField($options);
+     *      }
      */
     public function validateInput(
         string $resourceName,
@@ -401,7 +409,10 @@ class Resource extends HttpController
      * @param array $options
      *
      * @throws \InvalidArgumentException
-     * @todo question everything
+     * @todo question everything, for start can be simplified with
+     *      if (isset($options['required']) === false || $options['required'] === true) {
+     *          throw new \InvalidArgumentException($options['label'] . ' field is required!', 404);
+     *      }
      */
     private function validateRequiredField(array $options = [])
     {
