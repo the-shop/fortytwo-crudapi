@@ -11,9 +11,11 @@
     }
   ],
   "require": {
-    "the-shop/fortytwo-restapi": "^0.1.1"
+    "the-shop/fortytwo-restapi": "dev-master"
   },
   "require-dev": {
+    "the-shop/fortytwo-base": "@dev",
+    "the-shop/fortytwo-http": "@dev",
     "phpunit/phpunit": "^6.3",
     "squizlabs/php_codesniffer": "^3.0"
   },
