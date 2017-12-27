@@ -8,8 +8,8 @@ use Framework\Base\Application\Exception\ValidationException;
 use Framework\Base\Database\DatabaseQueryInterface;
 use Framework\Base\Model\BrunoInterface;
 use Framework\Base\Repository\BrunoRepositoryInterface;
+use Framework\Base\Repository\GenericRepository;
 use Framework\Base\Validation\Validator;
-use Framework\CrudApi\Repository\GenericRepository;
 use Framework\Http\Controller\Http as HttpController;
 
 /**
@@ -234,7 +234,7 @@ class Resource extends HttpController
                  ->getConfiguration()
                  ->getPathValue('env.DATABASE_NAME')
         )
-              ->setCollection($repository->getResourceName())
+              ->setCollection($repository->getCollection())
               ->setLimit($limit)
               ->setOffset($offset)
               ->setOrderBy($orderBy)
